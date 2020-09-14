@@ -1,0 +1,13 @@
+<%= @movie.name %>
+<%= @movie.creation_year %>
+<%= @movie.genre %>
+<% @movie.actors_by_age.each do |actor| %>
+<%= actor.name %>
+<% end %>
+<%= @movie.actors_average_age %>
+
+<%= form_tag "/movie_actor/#{@movie.id}" do %>
+<%= label_tag "Name" %>
+<%= text_field_tag "Name" %>
+<%= submit_tag "Add Actor" %>
+<% end %>
